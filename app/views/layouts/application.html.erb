@@ -10,6 +10,36 @@
   </head>
 
   <body>
-    <%= yield %>
+    <!--<header class="navbar navbar-fixed-top">-->
+    <!--  <div class="container">-->
+    <!--    <%# if client_signed_in? %>-->
+    <!--      <%#= render 'layouts/header_client' %>-->
+    <!--    <%# elsif admin_signed_in? %>-->
+    <!--      <%#= render 'layouts/header_admin' %>-->
+    <!--    <%# else %>-->
+    <!--      <%#= render 'layouts/header_logout' %>-->
+    <!--    <%# end %>-->
+    <!--  </div>-->
+    <!--</header>-->
+    <!--<main>-->
+    <!--  <div class="container main-container">-->
+    <!--    <% flash.each do |message_type, message| %>-->
+    <!--      <div class="alert alert-<%= message_type %>">-->
+    <!--        <%= message %>-->
+    <!--      </div>-->
+    <!--    <% end %>-->
+        <%# 各ページ本体 %>
+         <%= yield %>
+    <!--  </div>-->
+    <!--</main>-->
+    <!--<footer>-->
+    <!--  <div class="container">-->
+    <!--    <div class="row">-->
+    <!--      <div class="col-xs-5 col-xs-offset-9">-->
+    <!--        <p>CopyRight nagano-cafe.inc shop-logo made by <a href="https://www.designevo.com/jp/logo-maker/" title="無料オンラインロゴメーカー">DesignEvo</a> </>-->
+    <!--      </div>-->
+    <!--    </div>-->
+    <!--  </div>-->
+    <!--</footer>-->
   </body>
 </html>

@@ -1,3 +1,18 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  #devise_for :customers
+  #devise_for :customers
+
+  devise_for :admin, skip: [:registrations], controllers: {
+    sessions: 'admin/sessions'
+  }
+
+  namespace :admin do
+    resources :items
+    resources :genres
+    resources :customers
+    resources :orders
+    resources :order_details
+  end
+
 end
