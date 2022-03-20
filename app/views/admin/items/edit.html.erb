@@ -1,48 +1,48 @@
-<% if @item.errors.any? %>
-  <h3><%= @item.errors.count %>error occurrence</h3>
-    <ul>
-      <% @item.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-<% end %>
+<div class="container my-5">
+  <div class="row">
+    <h2>商品編集</h2>
+  </div>
 
-<div class="row">
-  <h2>商品編集</h2>
-    <%= form_with model: @item, url: admin_item_path, local: true do |f| %>
-      <div class="col-xs-5">
-        <div class="field">
-          <%= attachment_image_tag(@item, :image, size: "300x217", fallback: "no_image.png") %>
-          <%= f.attachment_field :image %>
-        </div>
+  <p></p>
+
+  <%= form_with model: @item, url: admin_item_path, local: true do |f| %>
+    <div class="col-xs-7">
+      <div class="field">
+        <%= f.label :商品画像 %>
+        <%= f.attachment_field :image %>
       </div>
-      <div class="col-xs-7">
-        <div class="field">
-          <%= f.label :商品名 %>
-          <%= f.text_field :name, class: "form" %>
-        </div>
-        <div class="field">
-          <%= f.label :商品説明 %>
-          <%= f.text_area :introduction %>
-        </div>
-        <div class="field">
-          <%= f.label :ジャンル %>
-          <%= f.collection_select :genre_id, Genre.all, :id, :name, prompt: "選択してください" %>
-        </div>
-        <div class="field">
-          <%= f.label :税抜価格 %>
-          <%= f.text_field :price %>
-          円
-        </div>
-          <!--<div class="field">-->
-          <!--  <%#= f.radio_button :is_enabled, true %>-->
-          <!--    <%#= f.label :is_enabled, "販売中" %>-->
-          <!--    <%#= f.radio_button :is_enabled, false %>-->
-          <!--    <%#= f.label :is_enabled, "売切れ" %>-->
-          <!--</div>-->
-        <div class="actions col-xs-3 col-xs-offset-4">
-        	<%= f.submit "変更を保存", class: "btn btn-success glyphicon glyphicon-save" %>
-        </div>
+      <br>
+      <div class="field">
+        <%= f.label :商品名　 %>
+        <%= f.text_field :name, class: "form" %>
       </div>
-    <% end %>
+      <br>
+      <div class="field">
+        <%= f.label :商品説明 %>
+        <%= f.text_area :introduction %>
+      </div>
+      <br>
+      <div class="field">
+        <%= f.label :ジャンル %>
+        <%= f.collection_select :genre_id, Genre.all, :id, :name, prompt: "選択してください" %>
+      </div>
+      <br>
+      <div class="field">
+        <%= f.label :税抜価格 %>
+        <%= f.text_field :price %>
+        円
+      </div>
+      <br>
+      <div class="field">
+        <%= f.radio_button :is_active, :true %>
+        <%= f.label :is_active, "販売中" %>
+        <%= f.radio_button :is_active, :false %>
+        <%= f.label :is_active, "売切れ" %>
+      </div>
+      <br>
+      <div class="actions col-xs-3 col-xs-offset-4">
+        <%= f.submit "変更を保存", class: "btn btn-info btn-lg rounded-pill" %>
+      </div>
+    </div>
+  <% end %>
 </div>

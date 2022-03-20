@@ -1,0 +1,19 @@
+<div style="display: flex; justify-content: center; align-items: center; height:600px;">
+  <div>
+    <strong><h2>本当に退会しますか？</h2></strong>
+    <p></p>
+    <p>
+      退会すると、会員登録情報や<br>
+      これまでの購入履歴が閲覧できなくなります。<br>
+      退会する場合は、「退会する」をクリックしてください。
+    </p>
+  </div>
+  <div class="row">
+    <div>
+      <%= link_to "退会しない", customers_path, class: "btn btn-info btn-lg rounded-pill" %>
+    </div>
+    <div>
+      <%= link_to "退会する", customers_out_path, method: :patch, data: {confirm: "本当に退会しますか？"}, class: "btn btn-danger btn-lg rounded-pill"%>
+    </div>
+  </div>
+</div>

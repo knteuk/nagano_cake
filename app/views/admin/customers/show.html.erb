@@ -1,0 +1,54 @@
+<div class="container my-5">
+  <div class="row">
+  	<h2><%= @customer.last_name %><%= @customer.first_name %>さんの会員情報</h2>
+  </div>
+
+  <p></p>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">会員ID</th>
+          <td style>
+            <%= @customer.id %>&ensp;
+          </td>
+      </tr>
+      <tr>
+        <th scope="col">氏名</th>
+        <td style><%= @customer.last_name %>&ensp;<%= @customer.first_name %></td>
+      </tr>
+      <tr>
+        <th scope="col">カナ</th>
+        <td style><%= @customer.last_name_kana %>&ensp;<%= @customer.first_name_kana %></td>
+      </tr>
+      <tr>
+        <th scope="col">郵便番号</th>
+        <td style><%= @customer.postal_code %></td>
+      </tr>
+      <tr>
+        <th scope="col">住所</th>
+        <td style><%= @customer.address %></td>
+      </tr>
+      <tr>
+        <th scope="col">電話番号</th>
+        <td style><%= @customer.telephone_number %></td>
+      </tr>
+      <tr>
+        <th scope="col">メールアドレス</th>
+        <td style><%= @customer.email %></td>
+      </tr>
+      <tr>
+        <th scope="col">会員ステータス</th>
+        <td>
+          <% if @customer.is_active == true %>
+            <strong><p class="text-success">有効</p></strong>
+          <% else %>
+            <strong><p class="text-muted">退会</p></strong>
+          <% end %>
+        </td>
+      </tr>
+    </thead>
+  </table>
+  <%= link_to "編集する", edit_admin_customer_path, class: "btn btn-info rounded-pill" %>
+  <%= link_to "注文履歴一覧を見る", admin_orders_path, class: "btn btn-primary rounded-pill" %>
+</div>

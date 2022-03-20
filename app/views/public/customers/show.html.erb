@@ -1,0 +1,70 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="offset-sm-3">
+	  <h2 class="red-border px-3 pb-1">マイページ</h2>
+	</div>
+  </div>
+
+  <div class="row">
+    <div class="offset-sm-3 col-sm-3">
+	  <strong class="red-border px-3 pb-1">登録情報</strong>
+	  <%= link_to "編集する", customers_edit_path, class: "btn btn-info rounded-pill" %>
+    </div>
+  </div>
+
+  <p></p>
+
+  <div class="row">
+  	<div class="offset-sm-4 col-sm-4">
+  	  <table class="table table-bordered">
+	    <tr class="brown-border">
+	      <td><strong>氏名</strong></td>
+	      <td>
+	        <%= current_customer.last_name %>
+	        <%= current_customer.first_name %>
+	      </td>
+	    </tr>
+        <tr class="brown-border">
+          <td><strong>フリガナ</strong></td>
+          <td>
+            <%= current_customer.last_name_kana %>
+            <%= current_customer.first_name_kana %>
+          </td>
+        </tr>
+        <tr class="brown-border">
+          <td><strong>郵便番号</strong></td>
+          <td><%= current_customer.postal_code %></td>
+        </tr>
+        <tr class="brown-border">
+          <td><strong>住所</strong></td>
+          <td><%= current_customer.address %></td>
+        </tr>
+        <tr class="brown-border">
+          <td><strong>電話番号</strong></td>
+          <td><%= current_customer.telephone_number %></td>
+        </tr>
+        <tr class="brown-border">
+          <td><strong>メールアドレス</strong></td>
+          <td><%= current_customer.email %></td>
+        </tr>
+      </table>
+      <!--<div class="row">-->
+        <!--<%#= link_to "パスワードを変更する", edit_customer_registration_path, class: "btn btn-outline-danger mx-auto my-1" %>-->
+	  <!-- </div>-->
+	</div>
+  </div>
+
+  <div class="row">
+  	<div class="offset-sm-3 col-sm-3">
+  	  <strong class="red-border px-3 pb-1">配送先　</strong>
+  	  <%= link_to "一覧を見る", addresses_path, class: "btn btn-primary rounded-pill" %>
+  	</div>
+  </div>
+  <p></p>
+  <div class="row">
+  	<div class="offset-sm-3 col-sm-3">
+  	  <strong class="red-border px-3 pb-1">注文履歴</strong>
+  	  <%= link_to "一覧を見る", orders_path, class: "btn btn-primary rounded-pill" %>
+    </div>
+  </div>
+</div>
